@@ -18,12 +18,12 @@ def form():
     return  render_template("myform.html" )   #when we don't need to change the name
    
 #page for new file
-@app.route("/menu", methods=['GET'])   #fetching value from form.html
+@app.route("/menu", methods= ['GET'] )   #fetching value from form.html
 def menu():
     Name = request.args.get("x")    #upadating the name accdingly
     c    = request.args.get("y")    # from get we take value from y its args of class request
     #myname = 'jack'
-    menu = render_template("index.html",   myname = Name ,  cname = c  )
+    menu = render_template("menu.html",   myname = Name ,  cname = c  )
     return menu
 
 #we have to sue decortaor over here
@@ -35,4 +35,4 @@ def mysearch():
 
 @app.route("/email")
 def myeamil():
-    return  render_template("index.html")
+    return  render_template("menu.html")
